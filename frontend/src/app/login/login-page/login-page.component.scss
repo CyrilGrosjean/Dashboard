@@ -1,0 +1,22 @@
+.login,
+.image {
+    min-height: 100vh;
+}
+.bg-image {
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ae13720c-fe7f-4a23-bb95-e1e25e5af8f1/db1tj72-c2c37878-f17e-4615-9a44-1b0b5da003bd.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FlMTM3MjBjLWZlN2YtNGEyMy1iYjk1LWUxZTI1ZTVhZjhmMVwvZGIxdGo3Mi1jMmMzNzg3OC1mMTdlLTQ2MTUtOWE0NC0xYjBiNWRhMDAzYmQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._dt373nmmilIpVdQLZ4Iu79OWI0nkUxqYlt644mxuow");
+    background-size: cover;
+    background-position: center right;
+}
+
+.flex-container {
+    display: flex;
+    align-items: stretch;
+}
+
+.flex-container > div {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 0px;
+    font-size: 30px;
+}

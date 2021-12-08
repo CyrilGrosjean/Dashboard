@@ -1,0 +1,39 @@
+.wrapper-div {
+    background-size: cover;
+    min-height: 5vw;
+    min-height: 10vw;
+
+}
+
+.center-text {
+    display : flex;
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    align-items : center;
+}
+
+.bold-text {
+    padding-top: 30px;
+    display : flex;
+    font-size: 2vw;
+    font-weight: bold;
+
+}
+
+.litle-text {
+    display : flex;
+    font-size: 1vw;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    align-items : center;
+
+}
+
+.button{
+    display : flex;
+    justify-content: center;
+    align-items : center;
+}

@@ -1,0 +1,51 @@
+.example-boundary {
+  width: 100vw;
+  height: 100vh - 10vh;
+  max-width: 100%;
+  border: dotted #ccc 2px;
+}
+
+.container {
+  justify-content: space-between;
+  flex-direction: column;
+  height: 79vh;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden !important;
+}
+
+.btn-holder {
+  margin-bottom: 2vw;
+  margin-right: 2vw;
+}
+
+.btn-font {
+  font-size: x-large;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.cardTest {
+  position: absolute;
+  width: 80vw;
+}
+
+.dropdown-menu li {
+  position: relative;
+}
+.dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+}
+.dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+  display: block;
+}
+

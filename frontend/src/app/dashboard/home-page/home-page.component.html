@@ -1,0 +1,37 @@
+<app-home-page-banner></app-home-page-banner>
+
+<div class="example-boundary container">
+        <card *ngFor="let card of cards" [card]="card" class="cardTest"></card>
+        <div class="position-absolute bottom-0 end-0 btn-holder">
+                <div class="col text-right">
+                        <div ngbDropdown placement="top-right" class="d-inline-block">
+                                <button mat-fab class="btn btn-font" color="warn" type="button" id="dropdownBasic"
+                                        ngbDropdownToggle>+</button>
+                                <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+                                        <button (click)="addWidget('Weather by City', 21, 22, 0, 2)"
+                                                ngbDropdownItem>Weather : City</button>
+                                        <button (click)="addWidget('Weather Pollution', 40, 35, 1, 2)"
+                                                ngbDropdownItem>Weather : Pollution</button>
+                                        <button (click)="addWidget('Riot Rotations', 20, 22, 2, 1)" ngbDropdownItem>Riot :
+                                                Rotations</button>
+                                        <button (click)="addWidget('Riot last match', 31, 27, 3, 1)" ngbDropdownItem>Riot :
+                                                Last match</button>
+                                        <button (click)="addWidget('Reddit Profile', 20, 40, 4, 3)"
+                                                ngbDropdownItem>Reddit : Profile</button>
+                                        <button (click)="addWidget('Youtube Stat', 20, 22, 5, 4)" ngbDropdownItem>Youtube :
+                                                Stat</button>
+                                        <button (click)="addWidget('Youtube Video', 29, 28, 6, 4)" ngbDropdownItem>Youtube
+                                                : Video</button>
+                                        <button (click)="addWidget('Crypto Currency', 20, 22, 7, 5)" ngbDropdownItem>Currency
+                                                : Crypto Currency</button>
+                                        <button (click)="addWidget('Money Currency', 20, 22, 8, 5)" ngbDropdownItem>Currency
+                                                : Money</button>
+                                        <button (click)="addWidget('Spotify track', 21, 33, 9, 6)" ngbDropdownItem>Spotify :
+                                                Track</button>
+                                        <button (click)="addWidget('Spotify artist', 20, 33, 10, 6)" ngbDropdownItem>Spotify :
+                                                Artist</button>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>

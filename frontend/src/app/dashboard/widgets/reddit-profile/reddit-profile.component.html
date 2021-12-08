@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div>
+    <form [formGroup]="reddit_form" (ngSubmit)="formSubmit()">
+        <div class="box d-flex justify-content-center">
+            <div class="form-group mb-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>Profile information</mat-label>
+                    <mat-select [(value)]="selected" [(ngModel)]="selected" formControlName="type" id="selectType" (selectionChange)="formSubmit()" placeholder="Please select a profile type info" required>
+                        <mat-option value="Profile">Profile</mat-option>
+                        <mat-option value="Coin">Coins</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="!isLogged">
+    <button type="submit" class="btn-xs border_radius" (click)="loginReddit()"><i class="fa fa-reddit"></i> Login with Reddit</button>
+</div>
+<div *ngIf="isLogged">
+    <div class="text-margin-top title">{{ result.name }}</div>
+    <img [src]="result.snoovatar_img" class="image-round space-top">
+    <div *ngIf="selected === 'Profile'">
+        <div class="description-start-profile">ID: {{ result.id }}</div>
+        <div class="text-margin-top description">Created: {{ result.created }}</div>
+        <div class="text-margin-top description">Number of friends: {{ result.num_friends }}</div>
+    </div>
+    <div *ngIf="selected === 'Coin'">
+        <div class="text-margin-top description">Coins: {{ result.coins }}</div>
+        <div class="text-margin-top description">Gold creddits: {{ result.gold_creddits }}</div>
+        <div class="text-margin-top description">Karma by awardee: {{ result.awardee_karma }}</div>
+        <div class="text-margin-top description">Karma by awarder: {{ result.awarder_karma }}</div>
+        <div class="text-margin-top description">Karma by comments: {{ result.comment_karma }}</div>
+        <div class="text-margin-top description">Karma by link: {{ result.link_karma }}</div>
+        <div class="text-margin-top description">Total karma: {{ result.total_karma }}</div>
+    </div>
+</div>

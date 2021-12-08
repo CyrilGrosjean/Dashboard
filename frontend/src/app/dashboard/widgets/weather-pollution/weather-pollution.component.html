@@ -1,0 +1,43 @@
+<div>
+    <form [formGroup]="weather_pollution_form" (ngSubmit)="cityFormSubmit()">
+        <div class="box d-flex justify-content-center">
+
+            <div class="form-group mb-3">
+                <input formControlName="city" id="inputCity" type="text" placeholder="Please enter a city" required=""
+                    autofocus="" class="form-control shadow-sm px-4">
+            </div>
+            <button type="submit" class="btn-success btn-xs"><mat-icon>search</mat-icon></button>
+        </div>
+        <div style="font-size: 13px">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                    <input formControlName="start" matStartDate placeholder="Start date">
+                    <input formControlName="end" matEndDate placeholder="End date">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+
+<!-- <div echarts [options]="chartOption" class="demo-chart"></div> -->
+
+<ngx-charts-line-chart
+  [view]="view"
+  [scheme]="colorScheme"
+  [legend]="legend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxis]="xAxis"
+  [yAxis]="yAxis"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [timeline]="timeline"
+  [results]="multi"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+</ngx-charts-line-chart>

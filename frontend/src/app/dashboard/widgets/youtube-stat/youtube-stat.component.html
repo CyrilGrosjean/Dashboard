@@ -1,0 +1,17 @@
+<div>
+    <form [formGroup]="youtube_stat_form" (ngSubmit)="youtubeStatFormSubmit()">
+        <div class="box d-flex justify-content-center">
+
+            <div class="form-group mb-3">
+                <input formControlName="name" id="inputName" type="text" placeholder="Please enter a name" required=""
+                    autofocus="" class="form-control shadow-sm px-4">
+            </div>
+            <button type="submit" class="btn-success btn-xs"><mat-icon>search</mat-icon></button>
+        </div>
+    </form>
+    <div>
+        <li>Subscribers : {{this.result.subscribers}}</li>
+        <li>Videos : {{this.result.videos}}</li>
+        <li>Views : {{this.result.views}}</li>
+    </div>
+</div>

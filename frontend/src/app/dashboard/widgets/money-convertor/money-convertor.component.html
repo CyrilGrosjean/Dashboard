@@ -1,0 +1,38 @@
+<div>
+    <form [formGroup]="money_form" (ngSubmit)="moneyFormSubmit()">
+        <div class="justify-content-center">
+            <div class="center">
+                <mat-form-field appearance="fill">
+                    <mat-label>Actual Currency</mat-label>
+                    <mat-select formControlName="actual_currency" required>
+                        <mat-option>--</mat-option>
+                        <mat-option *ngFor="let crypto of animals" [value]="crypto">
+                            {{crypto.view_value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="center">
+                <mat-form-field appearance="fill">
+                    <mat-label>Convert Currency</mat-label>
+                    <mat-select formControlName="convert_currency" required>
+                        <mat-option>--</mat-option>
+                        <mat-option *ngFor="let crypto of animals" [value]="crypto">
+                            {{crypto.view_value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" formControlName="value_to_convert"
+                    placeholder="Value to convert" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
+            </div>
+            <div class="container">
+                <div class="item item-1">
+                    {{this.result}}
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

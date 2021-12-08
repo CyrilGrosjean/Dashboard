@@ -1,0 +1,25 @@
+<div>
+    <form [formGroup]="riot_last_match" (ngSubmit)="formSubmit()">
+        <div class="box d-flex justify-content-center">
+            <div class="form-group mb-3">
+                <input formControlName="name" id="inputName" type="text" placeholder="Enter a summoner name" autofocus="" class="form-control shadow-sm px-4">
+            </div>
+            <button type="submit" class="btn-success btn-xs"><mat-icon>search</mat-icon></button>
+        </div>
+    </form>
+</div>
+<div class="line">
+    <div class="column title">Winners</div>
+    <div class="title">Losers</div>
+</div>
+<div class="line" *ngFor="let i of numbers">
+    <img class="reduce_image value" src="http://ddragon.leagueoflegends.com/cdn/{{ (result.version) ? result.version : '11.23.1' }}/img/profileicon/{{ (result.winners.length > 0) ? result.winners[i].icon : 1 }}.png" title="{{ (result.winners.length > 0) ? result.winners[i].username : 'undefined' }}">
+    <div class="value">{{ (result.winners.length > 0) ? result.winners[i].champion : '' }}</div>
+    <div class="value">{{ (result.winners.length > 0) ? result.winners[i].kills : '' }} / {{ (result.winners.length > 0) ? result.winners[i].deaths : '' }} / {{ (result.winners.length > 0) ? result.winners[i].assists : '' }}</div>
+    <div class="value">{{ (result.winners.length > 0) ? result.winners[i].farm: '' }}</div>
+    <div class="value">|</div>
+    <div class="value">{{ (result.losers.length > 0) ? result.losers[i].farm : '' }}</div>
+    <div class="value">{{ (result.losers.length > 0) ? result.losers[i].kills : '' }} / {{ (result.losers.length > 0) ? result.losers[i].deaths : '' }} / {{ (result.losers.length > 0) ? result.losers[i].assists : ''}}</div>
+    <div class="value">{{ (result.losers.length > 0) ? result.losers[i].champion : '' }}</div>
+    <img class="reduce_image" src="http://ddragon.leagueoflegends.com/cdn/{{ (result.version) ? result.version : '11.23.1' }}/img/profileicon/{{ (result.losers.length > 0) ? result.losers[i].icon : 1 }}.png" title="{{ (result.losers.length > 0) ? result.losers[i].username : 'undefined' }}">
+</div>

@@ -1,0 +1,43 @@
+.widget-right_mine {
+    position: relative;
+    width: 3vw;
+    border-radius: 6px;
+    // box-shadow: 10px -2px 20px 2px rgba(0, 0, 0, 0.3);
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.column {
+    margin-right: 70%;
+}
+
+.title {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.reduce_image {
+    width: 30px;
+    height: auto;
+}
+
+.value {
+    margin: 5px;
+}
+
+.box {
+    display: flex;
+}
+
+.btn-xs {
+    height: 40px;
+    // border: none;
+    // background-color: transparent;
+    // outline: none;
+}

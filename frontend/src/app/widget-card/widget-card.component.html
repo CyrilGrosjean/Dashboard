@@ -1,0 +1,51 @@
+<div
+  (mousedown)="getPrimaryCard()"
+  class="{{card.color}} textField"
+  [style.width.rem]="card.size[0]"
+  [style.height.rem]="card.size[1]"
+  cdkDragBoundary=".example-boundary"
+  cdkDrag [cdkDragFreeDragPosition]="dragPosition"
+  (cdkDragEnded)="onDragEnded($event)">
+  <div class="card-header">{{card.name}}
+
+    <button (click)="closeCard()" type="button" class="btn-close top-right" style="float: right;"
+      aria-label="Close"></button>
+  </div>
+  <div class="card-body">
+    <!-- <h4 class="card-title">{{card.title}}</h4> -->
+    <!-- <p class="card-text">{{card.subtitle}}</p> -->
+    <div *ngIf="card.serviceId===0">
+      <app-open-weather></app-open-weather>
+    </div>
+    <div *ngIf="card.serviceId===1">
+      <app-weather-pollution></app-weather-pollution>
+    </div>
+    <div *ngIf="card.serviceId===2">
+      <app-riot-rotations></app-riot-rotations>
+    </div>
+    <div *ngIf="card.serviceId===3">
+      <app-riot-last-match></app-riot-last-match>
+    </div>
+    <div *ngIf="card.serviceId===4">
+      <app-reddit-profile></app-reddit-profile>
+    </div>
+    <div *ngIf="card.serviceId===5">
+      <app-youtube-stat></app-youtube-stat>
+    </div>
+    <div *ngIf="card.serviceId===6">
+      <app-youtube-video></app-youtube-video>
+    </div>
+    <div *ngIf="card.serviceId===7">
+      <app-crypto-currency></app-crypto-currency>
+    </div>
+    <div *ngIf="card.serviceId===8">
+      <app-money-convertor></app-money-convertor>
+    </div>
+    <div *ngIf="card.serviceId===9">
+      <app-spotify-music></app-spotify-music>
+    </div>
+    <div *ngIf="card.serviceId===10">
+      <app-spotify-artist></app-spotify-artist>
+    </div>
+  </div>
+</div>

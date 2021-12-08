@@ -1,0 +1,27 @@
+<div>
+    <form [formGroup]="riot_rotations" (ngSubmit)="formSubmit()">
+        <div class="box d-flex justify-content-center">
+            <div class="form-group mb-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>Rotation type</mat-label>
+                    <mat-select [(value)]="selected" [(ngModel)]="selected" formControlName="rotation" id="selectRotation" (selectionChange)="formSubmit()" placeholder="Please select a rotation type" required>
+                        <mat-option value="Normal">Normal rotation</mat-option>
+                        <mat-option value="Low">Low rotation</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="size_max">
+    <div *ngFor="let item of widget.championList">
+        <img class="reduce_image" [src]="item.link" [title]="item.name">
+    </div>
+</div>
+<br>
+<div class="min_level" *ngIf="selected=='Normal'">
+    Update every tuesdays
+</div>
+<div class="min_level" *ngIf="selected=='Low'">
+    Maximum level: {{ widget.level }}
+</div>

@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div>
+    <form [formGroup]="music_form" (ngSubmit)="formSubmit()">
+        <div class="box d-flex justify-content-center">
+
+            <div class="form-group mb-3">
+                <input formControlName="name" id="inputName" type="text" placeholder="Please enter a music track" required=""
+                    autofocus="" class="form-control border-0 shadow-sm px-4">
+            </div>
+            <button type="submit" class="btn-success btn-xss"><mat-icon>search</mat-icon></button>
+
+        </div>
+    </form>
+</div>
+
+<div *ngIf="url == ''">
+    <button type="submit" class="btn-xs border_radius" (click)="loginSpotify()"><i class="fa fa-spotify"></i> Login with Spotify</button>
+</div>
+<div class="space-top" *ngIf="url != ''">
+    <iframe [src]="result | safe: 'resourceUrl'" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>
